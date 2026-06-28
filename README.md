@@ -1,6 +1,6 @@
 # Stock Price Forecaster
 
-LSTM-powered stock price prediction with a 7-day forecast, REST API, and live interactive dashboard.
+LSTM-powered stock price prediction with up to 14-day forecast, REST API, and live interactive dashboard.
 
 **Live demo:** https://huggingface.co/spaces/VaibhavAnand120/stock-price-forecaster
 
