@@ -48,7 +48,7 @@ def forecast(ticker, days):
         connect_x  = [last_90.index[-1]] + list(forecast_dates)
         connect_y  = [float(last_90["Close"].iloc[-1])] + list(forecast_prices)
 
-        # plot
+        # plots
         fig = go.Figure()
         fig.add_trace(go.Scatter(
             x=last_90.index,
@@ -80,7 +80,7 @@ def forecast(ticker, days):
 
 with gr.Blocks(title="Stock Price Forecaster") as demo:
     gr.Markdown("""
-    # 📈 Stock Price Forecaster
+    Stock Price Forecaster
     LSTM-powered stock price prediction trained on 5 years of Yahoo Finance data.
     **RMSE: $4.66 | MAE: $3.89**
     """)
@@ -90,8 +90,8 @@ with gr.Blocks(title="Stock Price Forecaster") as demo:
         days_input   = gr.Slider(minimum=1, maximum=14, value=7, step=1, label="Forecast days")
 
     predict_btn = gr.Button("Forecast", variant="primary")
-    chart       = gr.Plot(label="Price chart")
-    summary     = gr.Textbox(label="Forecast summary", lines=12)
+    chart = gr.Plot(label="Price chart")
+    summary = gr.Textbox(label="Forecast summary", lines=12)
 
     predict_btn.click(
         fn=forecast,
